@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For You — A Small Surprise</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Password overlay: blocks content until correct password entered -->
+  <div id="passwordOverlay" class="password-overlay" aria-hidden="false">
+    <div class="pw-card">
+      <h2>Enter the secret</h2>
+      <p class="pw-hint">This page is a little surprise — type the secret to continue.</p>
+      <input id="pwInput" type="password" placeholder="Secret password" aria-label="secret password">
+      <div class="pw-actions">
+        <button id="pwSubmit">Unlock</button>
+      </div>
+      <p class="pw-note">(Client-side protection only — not cryptographically secure.)</p>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <h1><span class="heart">❤</span> For You <span class="heart">❤</span></h1>
+    <p class="tagline">A page made with love</p>
+    <nav>
+      <a href="#letter">Letter</a>
+      <a href="#photos">Photos</a>
+      <a href="#videos">Videos</a>
+    </nav>
+  </header>
+
+  <main id="siteContent" class="hidden-until-unlocked" aria-hidden="true">
+    <section id="letter" class="panel">
+      <h2>My Letter</h2>
+      <article class="letter">
+        <p id="typedLine" class="typed">Hi <strong>[Her name]</strong>,</p>
+        <p>This is where your heartfelt message appears — it will be typed out for a special moment.</p>
+        <p>Remember that day we...</p>
+        <p>Love,</p>
+        <p><strong>[Your name]</strong></p>
+      </article>
+    </section>
+
+    <section id="photos" class="panel">
+      <h2>Photos</h2>
+      <p class="hint">Click any photo to view it larger.</p>
+      <div class="gallery">
+        <!-- Replace src & alt with your images in the images/ folder -->
+        <button class="thumb" data-full="images/photo1.jpg"><img src="images/photo1.jpg" alt="Photo 1"></button>
+        <button class="thumb" data-full="images/photo2.jpg"><img src="images/photo2.jpg" alt="Photo 2"></button>
+        <button class="thumb" data-full="images/photo3.jpg"><img src="images/photo3.jpg" alt="Photo 3"></button>
+      </div>
+    </section>
+
+    <section id="videos" class="panel">
+      <h2>Videos</h2>
+      <p class="hint">Use your own MP4s or embed YouTube links.</p>
+
+      <div class="videos">
+        <!-- Local MP4 example (put files in videos/ folder) -->
+        <video controls width="480" preload="metadata">
+          <source src="videos/video1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- YouTube embed example: replace VIDEO_ID -->
+        <div class="youtube">
+          <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with ♥ and a little JavaScript</p>
+  </footer>
+
+  <!-- lightbox modal -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lb-close" aria-label="Close">×</button>
+    <img class="lb-image" src="" alt="">
+    <div class="lb-caption"></div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
