@@ -49,9 +49,12 @@ document.addEventListener('DOMContentLoaded', function () {
   // --- Typed animation for the opening line(s) ---
   const typedEl = document.getElementById('typedLine');
   const lines = [
-    'Hi my love,',
-    'Every day with you feels like home.',
-    'You are beautiful, brave, and kind.',
+    'To you, my Jolie',
+    "I hope you always remember this: no matter how heavy your days get or how quiet you become, my love for you doesn't shrink.",
+    "I'll choose you on the happy days, the hard days, and every day in between.",
+    "You never have to earn my love — it is yours, and I'll keep showing up for you.",
+    'Where you go I will go, and where you stay I will stay. ❤️',
+    'From Thato'
   ];
 
   function startTyped() {
