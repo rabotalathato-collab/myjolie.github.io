@@ -36,7 +36,7 @@
 
   <main id="siteContent" class="hidden-until-unlocked" aria-hidden="true">
     <section id="letter" class="panel">
-      <h2>My Letter</h2>
+      <h2>A start to a beautiful life with you</h2>
       <article class="letter">
         <!-- Typed line (JS will type the message here) -->
         <p id="typedLine" class="typed"></p>
@@ -50,7 +50,7 @@
     </section>
 
     <section id="photos" class="panel">
-      <h2>Photos</h2>
+      <h2>A start to a beautiful life with you</h2>
       <p class="hint">Click any photo to view it larger.</p>
       <div class="gallery">
         <!-- Replace src & alt with your images in the images/ folder -->
@@ -58,28 +58,30 @@
         <button class="thumb" data-full="images/photo2.jpg"><img src="images/photo2.jpg" alt="Photo 2"></button>
         <button class="thumb" data-full="images/photo3.jpg"><img src="images/photo3.jpg" alt="Photo 3"></button>
       </div>
+      <p id="photosNote" class="hint" style="margin-top:10px;color:#a04057;display:none"></p>
     </section>
 
     <section id="videos" class="panel">
-      <h2>Videos</h2>
+      <h2>A start to a beautiful life with you</h2>
       <p class="hint">Use your own MP4s or embed YouTube links.</p>
 
       <div class="videos">
         <!-- Local MP4 example (put files in videos/ folder) -->
-        <video controls width="480" preload="metadata">
+        <video id="localVideo" controls width="480" preload="metadata">
           <source src="videos/video1.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
 
         <!-- YouTube embed example: replace VIDEO_ID -->
-        <div class="youtube">
-          <iframe width="560" height="315"
+        <div class="youtube" style="margin-top:12px">
+          <iframe id="ytFrame" width="560" height="315"
             src="https://www.youtube.com/embed/VIDEO_ID"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         </div>
       </div>
+      <p id="videosNote" class="hint" style="margin-top:10px;color:#a04057;display:none"></p>
     </section>
   </main>
 
