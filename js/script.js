@@ -1,4 +1,5 @@
 // Client-side password, typed animation, and lightbox
+// Updated typed lines to user-provided letter
 document.addEventListener('DOMContentLoaded', function () {
   // --- CONFIG: change the password here if you want ---
   const PASSWORD = 'ruth1:16'; // client-side only; visible in page source
@@ -49,10 +50,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // --- Typed animation for the opening line(s) ---
   const typedEl = document.getElementById('typedLine');
   const lines = [
-    'To you, my Jolie',
-    "I hope you always remember this: no matter how heavy your days get or how quiet you become, my love for you doesn't shrink.",
+    'To you my Jolie',
+    "I hope you always remember this, that no matter how heavy your days get or how quiet you become, my love for you doesn't shrink.",
     "I'll choose you on the happy days, the hard days, and every day in between.",
-    "You never have to earn my love — it is yours, and I'll keep showing up for you.",
+    "You never have to earn my love as it is yours, and I'll keep showing up for you.",
     'Where you go I will go, and where you stay I will stay. ❤️',
     'From Thato'
   ];
