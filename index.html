@@ -36,7 +36,7 @@
 
   <main id="siteContent" class="hidden-until-unlocked" aria-hidden="true">
     <section id="letter" class="panel">
-      <h2>A start to something beautiful</h2>
+      <h2>My Letter</h2>
       <article class="letter">
         <!-- Typed line (JS will type the message here) -->
         <p id="typedLine" class="typed"></p>
@@ -50,29 +50,41 @@
     </section>
 
     <section id="photos" class="panel">
-      <h2>A start to something beautiful</h2>
+      <h2>Photos</h2>
       <p class="hint">Click any photo to view it larger.</p>
       <div class="gallery">
-        <!-- Updated to use the actual filenames in the repository root -->
-        <button class="thumb" data-full="IMG-20260513-WA0230.jpg"><img src="IMG-20260513-WA0230.jpg" alt="Photo 1"></button>
-        <button class="thumb" data-full="IMG-20260513-WA0232 (1).jpg"><img src="IMG-20260513-WA0232 (1).jpg" alt="Photo 2"></button>
-        <button class="thumb" data-full="IMG-20260513-WA0233.jpg"><img src="IMG-20260513-WA0233.jpg" alt="Photo 3"></button>
-        <button class="thumb" data-full="photo-1.jpg"><img src="photo-1.jpg" alt="Photo 4"></button>
-        <button class="thumb" data-full="photo-2.jpg"><img src="photo-2.jpg" alt="Photo 5"></button>
-        <button class="thumb" data-full="photo-3.jpg"><img src="photo-3.jpg" alt="Photo 6"></button>
-        <button class="thumb" data-full="photo-4.jpg"><img src="photo-4.jpg" alt="Photo 7"></button>
+        <!-- Use filenames that exist in the repository -->
+        <button class="thumb" data-full="images/photo-1.jpg"><img src="images/photo-1.jpg" alt="Photo 1"></button>
+        <button class="thumb" data-full="images/photo-2.jpg"><img src="images/photo-2.jpg" alt="Photo 2"></button>
+        <button class="thumb" data-full="images/photo-3.jpg"><img src="images/photo-3.jpg" alt="Photo 3"></button>
+        <!-- existing photo-4 -->
+        <button class="thumb" data-full="images/photo-4.jpg"><img src="images/photo-4.jpg" alt="Photo 4"></button>
+        <!-- use available IMG files for photos 5–7 -->
+        <button class="thumb" data-full="images/IMG-20260513-WA0230.jpg"><img src="images/IMG-20260513-WA0230.jpg" alt="Photo 5"></button>
+        <button class="thumb" data-full="images/IMG-20260513-WA0232.jpg"><img src="images/IMG-20260513-WA0232.jpg" alt="Photo 6"></button>
+        <button class="thumb" data-full="images/IMG-20260525-WA0015.jpg"><img src="images/IMG-20260525-WA0015.jpg" alt="Photo 7"></button>
       </div>
     </section>
 
     <section id="videos" class="panel">
-      <h2>A start to something beautiful</h2>
+      <h2>Videos</h2>
+      <p class="hint">Use your own MP4s or embed YouTube links.</p>
 
       <div class="videos">
-        <!-- Updated to use the actual video filename in the repository root -->
+        <!-- Local MP4 example (put files in videos/ folder) -->
         <video controls width="480" preload="metadata">
-          <source src="VID-20260526-WA0224.mp4" type="video/mp4">
+          <source src="videos/video1.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
+
+        <!-- YouTube embed example: replace VIDEO_ID -->
+        <div class="youtube">
+          <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
       </div>
     </section>
   </main>
