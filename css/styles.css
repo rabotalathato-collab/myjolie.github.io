@@ -1,0 +1,153 @@
+:root{
+  --bg-1: #ffeef5;
+  --bg-2: #fff0f6;
+  --card: #ffffff;
+  --accent: #ff5b7a;
+  --accent-dark: #e04057;
+  --text:#2b1f2a;
+  --muted:#6b5564;
+  --max-width:980px;
+  --radius:16px;
+  --heart-size:24px;
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+/* Page layout */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  color:var(--text);
+  line-height:1.5;
+  padding:28px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* repeating tiny heart pattern using SVG data URL */
+body::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24'><path fill='%23ffb3c1' d='M12 21s-7-4.5-9-7.1C1.2 11.1 4 7 7 7c1.9 0 3 1.2 3 1.2S11.1 7 13 7c3 0 5.8 4.1 4 6.9C19 16.5 12 21 12 21z'/></svg>");
+  opacity:0.12;
+  background-repeat:repeat;
+  z-index:0;
+  mix-blend-mode:screen;
+}
+
+/* content container */
+.site-header{
+  width:100%;
+  max-width:var(--max-width);
+  text-align:center;
+  margin-bottom:18px;
+  z-index:1;
+  position:relative;
+}
+.site-header h1{
+  margin:.2rem 0;
+  font-family: "Great Vibes", cursive;
+  font-size:48px;
+  color:var(--accent-dark);
+  letter-spacing:1px;
+}
+.site-header .tagline{margin:0;color:var(--muted);font-size:0.95rem}
+nav{margin-top:10px}
+nav a{
+  margin:0 10px;color:var(--accent);text-decoration:none;font-weight:600;
+  background:linear-gradient(90deg, rgba(255,91,122,0.12), transparent);
+  padding:6px 10px;border-radius:8px;
+}
+
+/* main layout and panels */
+main{width:100%;max-width:var(--max-width);z-index:1}
+.panel{
+  background:var(--card);
+  padding:22px;
+  margin:18px 0;
+  border-radius:var(--radius);
+  box-shadow:0 10px 30px rgba(192, 78, 110, 0.08);
+  border: 1px solid rgba(224,64,87,0.06);
+}
+
+/* letter styles */
+.letter p{margin:0 0 0.9rem;font-size:1.05rem}
+.typed{font-size:1.25rem;color:var(--accent-dark);font-weight:600}
+.hint{color:var(--muted);font-size:.95rem}
+
+/* gallery */
+.gallery{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.thumb{
+  border:0;
+  padding:0;
+  background:none;
+  cursor:pointer;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 10px 24px rgba(0,0,0,0.06);
+  flex:0 0 auto;
+}
+.thumb img{
+  display:block;
+  width:150px;
+  height:150px;
+  object-fit:cover;
+  transition:transform .25s ease;
+}
+.thumb:hover img{transform:scale(1.03)}
+
+/* videos */
+.videos video, .videos iframe{border-radius:10px;box-shadow:0 8px 22px rgba(0,0,0,0.08);}
+
+/* footer */
+.site-footer{margin-top:12px;color:var(--muted);font-size:.95rem;z-index:1}
+
+/* lightbox */
+.lightbox{
+  position:fixed;inset:0;display:none;align-items:center;justify-content:center;
+  background:rgba(0,0,0,0.6);z-index:9999;padding:20px;
+}
+.lightbox[aria-hidden="false"]{display:flex}
+.lb-image{max-width:90%;max-height:80%;border-radius:10px;box-shadow:0 8px 40px rgba(0,0,0,0.6)}
+.lb-close{
+  position:fixed;right:18px;top:18px;background:transparent;border:0;
+  font-size:36px;color:white;cursor:pointer;
+}
+
+/* password overlay (centered) */
+.password-overlay{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,240,246,0.95));
+  z-index:10000;padding:20px;
+}
+.pw-card{
+  max-width:420px;background:linear-gradient(180deg,#fff,#fff9fb);padding:22px;border-radius:14px;
+  box-shadow:0 14px 40px rgba(224,64,87,0.14);text-align:center;border:1px solid rgba(255,91,122,0.08);
+}
+.pw-card h2{margin:0 0 8px;font-family:"Playfair Display",serif;color:var(--accent-dark)}
+.pw-hint{color:var(--muted);margin:0 0 12px}
+#pwInput{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(200,160,170,0.6);font-size:1rem}
+.pw-actions{margin-top:12px}
+#pwSubmit{padding:10px 16px;border-radius:10px;border:0;background:var(--accent);color:white;font-weight:700;cursor:pointer}
+.pw-note{font-size:0.8rem;color:var(--muted);margin-top:10px}
+
+/* small helpers */
+.hidden-until-unlocked{visibility:hidden;opacity:0;transition:visibility 0s linear .2s, opacity .2s linear}
+.unlocked{visibility:visible;opacity:1;transition:opacity .25s linear}
+
+/* responsive */
+@media (max-width:640px){
+  .thumb img{width:110px;height:110px}
+  .videos iframe, .videos video{width:100%}
+  .site-header h1{font-size:36px}
+}
